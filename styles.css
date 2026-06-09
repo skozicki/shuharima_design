@@ -1749,3 +1749,353 @@ TESTIMONMIALS
   background: #111;
   transform: scale(1.2);
 }
+
+/* ==============================
+TECH STACK
+================================= */
+.techstack-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.techstack-section .text-xs {
+  margin-bottom: 24px;
+}
+
+.techstack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.techstack-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: var(--pure-white-color);
+  border-radius: var(--radius-xs);
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.techstack-item::before {
+  content: attr(data-label);
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background-color: #111;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.techstack-item:hover {
+  box-shadow: 0 4px 12px rgba(131, 46, 136, 0.12);
+  transform: translateY(-2px);
+}
+
+.techstack-item:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.techstack-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* ==============================
+ABOUT SECTION
+================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  padding: 64px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.about-photo-wrap {
+  position: relative;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-xs);
+}
+
+.about-photo-meta {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-followers {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.about-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.about-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.about-socials a:hover {
+  background: rgba(0,0,0,0.85);
+}
+
+.about-socials img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.about-name {
+  margin: 16px 0 4px;
+  font-size: var(--heading4-size);
+  font-weight: 700;
+}
+
+.about-role {
+  font-size: var(--text-xs);
+  color: var(--text-color-gray);
+  font-weight: 200;
+  padding-bottom: 0;
+  margin-bottom: 32px;
+}
+
+.about-team-label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color-gray);
+  letter-spacing: 0.05em;
+  padding-bottom: 12px;
+}
+
+.about-team-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--pure-white-color);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-xs);
+  padding: 14px 16px;
+}
+
+.about-team-card img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about-team-name {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.about-team-role {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--text-color-gray);
+  font-weight: 200;
+}
+
+.about-headline {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 40px;
+  color: var(--text-color);
+}
+
+.about-headline strong {
+  font-weight: 900;
+}
+
+.about-point {
+  margin-bottom: 28px;
+}
+
+.about-point h4 {
+  font-size: var(--heading4-size);
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--text-color);
+}
+
+.about-point p {
+  font-size: var(--text-sm);
+  font-weight: 200;
+  color: var(--text-color-gray);
+  padding-bottom: 0;
+  line-height: 1.6;
+}
+
+/* ==============================
+HERO ANIMATION
+================================= */
+.container-hero-anim {
+  max-width: 1080px;
+  margin: 64px auto;
+  padding: 0 16px;
+}
+
+.hero-anim-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1060 / 720;
+}
+
+.ha {
+  position: absolute;
+  opacity: 0;
+}
+
+/* www — duży mockup strony, centrum */
+.ha-www {
+  width: 72%;
+  top: 10%;
+  left: 10%;
+  animation: haFade 0.4s ease forwards 0.2s;
+}
+
+/* app — mockup telefonu, prawa strona */
+.ha-app {
+  width: 30%;
+  top: 18%;
+  right: 0%;
+  animation: haFade 0.4s ease forwards 1.0s;
+}
+
+/* left menu — lewy pasek ikon */
+.ha-leftmenu {
+  width: 7%;
+  top: 25%;
+  left: 0%;
+  animation: haFade 0.4s ease forwards 1.8s;
+}
+
+/* menu bar — dolny pasek Ideas/Solutions/Development */
+.ha-menubar {
+  width: 50%;
+  bottom: 4%;
+  left: 22%;
+  animation: haFade 0.4s ease forwards 1.8s;
+}
+
+/* fb — wizytówka, dół lewa strona */
+.ha-fb {
+  width: 28%;
+  bottom: 8%;
+  left: 8%;
+  animation: haFade 0.4s ease forwards 2.6s;
+}
+
+/* 1 — przycisk www, górny rząd */
+.ha-1 {
+  width: 13%;
+  top: 5%;
+  left: 10%;
+  animation: haFade 0.3s ease forwards 3.4s;
+}
+
+/* 2 — przycisk app, górny rząd */
+.ha-2 {
+  width: 13%;
+  top: 5%;
+  left: 25%;
+  animation: haFade 0.3s ease forwards 3.9s;
+}
+
+/* 3 — przycisk print, górny rząd */
+.ha-3 {
+  width: 13%;
+  top: 5%;
+  left: 40%;
+  animation: haFade 0.3s ease forwards 4.4s;
+}
+
+/* social media — ikona góra prawa */
+.ha-social {
+  width: 18%;
+  top: 0%;
+  right: 4%;
+  animation: haFade 0.5s ease forwards 5.2s;
+}
+
+@keyframes haFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ha-buttons-row {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ha-buttons-row img {
+  width: 200px;
+  height: auto;
+  position: static;
+}
+
+.ha-1, .ha-2, .ha-3 {
+  position: static; /* nadpisuje absolute z .ha */
+  width: 20%;
+  height: auto;
+}

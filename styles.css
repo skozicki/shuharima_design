@@ -176,8 +176,8 @@ h5 {
 p {
     margin: 0;
     padding-bottom: 32px;
-    font-weight: 200;
-    font-size: var(--radius-sm);
+    font-weight: 400;
+    font-size: var(--text-sm);
 }
 
 .li-shadow p {
@@ -216,7 +216,7 @@ strong {
 
 .text-sm {
     font-size: var(--text-sm);
-    color: var(--text-color-light-gray);
+    color: var(--text-color);
     font-weight: 600;
 }
 
@@ -659,20 +659,30 @@ background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(91,22,95,1) 60%, rgba(
 
 .container {
     padding: 64px 32px;
-    max-width: 1280px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
 .container-nav {
     padding: 0 32px;
-    max-width: 1280px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
 
 .card-container {
         margin: 0 0 32px 0;
-        border-bottom: 1px solid var(--surface-color);
+        /*border-bottom: 1px solid var(--surface-color);*/
+}
+
+.card-meta-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card-meta-row p {
+  font-size: var(--text-md);
 }
 
 .card-content {
@@ -1145,7 +1155,7 @@ Before After Slider
   
   .container-2 {
     position: relative;
-    width: 1280px;
+    width: 1080px;
     height: 600px;
     border: 2px solid white;
     /* margin: 0;
@@ -1229,6 +1239,20 @@ Before After Slider
     border-width: 0 2px 2px 0;
     transform: rotate(135deg);
   }
+
+
+  .grid-container-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 640px) {
+  .grid-container-2col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 
 
@@ -1451,7 +1475,7 @@ Large devices (1024px or larger)
     }
     .container {
         padding: 64px 32px;
-        max-width: 1280px;
+        max-width: 1080px;
         margin: 0 auto;
     }
     
@@ -1531,10 +1555,10 @@ LOGA
 
 .logos-track {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 64px;
     width: max-content;
-    animation: marquee 20s linear infinite;
+    animation: marquee 30s linear infinite;
 }
 
 .logos-track img {
@@ -1607,10 +1631,16 @@ produkt
 .srv-left { display: flex; align-items: center; gap: 20px; }
 
 .srv-arrow {
-  font-size: 22px;
-  transition: color 0.3s ease;
+  font-size: 33px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  flex-shrink: 0;
 }
-.srv-item:hover .srv-arrow { color: var(--accent-color); }
+
+.srv-item:hover .srv-arrow {
+  color: var(--accent-color);
+  transform: rotate(45deg);
+}
 
 .srv-title {
   font-size: 28px;
@@ -1630,36 +1660,12 @@ produkt
   align-items: flex-end;
   gap: 2px;
 }
+
 .srv-tag {
   font-size: 13px;
   color: var(--text-color-gray);
   font-weight: 600;
 }
-
-.srv-thumb {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0.92);
-  width: 240px;
-  height: 180px;
-  border-radius: 8px;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-  z-index: 10;
-  pointer-events: none;
-}
-.srv-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.srv-item:hover .srv-thumb {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
 
 /* ==============================
 TESTIMONMIALS
@@ -1773,8 +1779,8 @@ TECH STACK
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   background-color: var(--pure-white-color);
   border-radius: var(--radius-xs);
   border: 1px solid #e5e7eb;
@@ -1839,7 +1845,7 @@ ABOUT SECTION
 }
 
 .about-photo {
-  width: 100%;
+  width: 75%;
   height: auto;
   display: block;
   border-radius: var(--radius-xs);
@@ -1969,8 +1975,8 @@ ABOUT SECTION
 }
 
 .about-point p {
-  font-size: var(--text-sm);
-  font-weight: 200;
+  font-size: var(--text-md);
+  font-weight: 400;
   color: var(--text-color-gray);
   padding-bottom: 0;
   line-height: 1.6;
@@ -2099,3 +2105,46 @@ HERO ANIMATION
   width: 20%;
   height: auto;
 }
+
+
+/* ==============================
+PROJECT LINK
+================================= */
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease;
+  font-size: var(--text-xs);
+  color: var(--text-color-gray)
+}
+
+.project-link .arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.project-link:hover .arrow {
+  transform: rotate(45deg);
+}
+
+.project-link:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.project-link-lg {
+  font-size: var(--heading3-size);
+}
+
+.project-link-md {
+  font-size: var(--text-sm);
+}
+
+.arrow svg {
+  vertical-align: middle;
+}
+
+
+

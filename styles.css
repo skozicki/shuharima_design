@@ -95,7 +95,7 @@ h5 {
 
 h1 {
     font-size: var(--heading1-size);
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.1;
 }
 
@@ -145,7 +145,7 @@ h5 {
 
 .subtitle {
   color: hsl(0 0% 0% / 0.7);
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   font-weight: 400;
   opacity: 0;
   transform: translateY(3rem);
@@ -1573,8 +1573,8 @@ LOGA
 }
 
 @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0%); }
 }
 
 /* ==============================
@@ -1665,6 +1665,18 @@ produkt
   font-size: 13px;
   color: var(--text-color-gray);
   font-weight: 600;
+}
+
+
+.srv-title-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.srv-title-link:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ==============================
@@ -2147,4 +2159,96 @@ PROJECT LINK
 }
 
 
+/* ==============================
+SERVICES GRID
+================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
+@media only screen and (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.services-headline-cell,
+.services-cell {
+  padding: 40px 32px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+@media only screen and (min-width: 768px) {
+  .services-headline-cell,
+  .services-cell {
+    border-right: 1px solid #e5e7eb;
+  }
+  .services-grid > div:nth-child(even) {
+    border-right: none;
+  }
+}
+
+.services-headline {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.services-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #111;
+  color: #fff;
+  border-radius: var(--radius-xs);
+  margin-bottom: 16px;
+}
+
+.services-cell h4 {
+  font-size: var(--heading4-size);
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--text-color);
+}
+
+.services-cell p {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--text-color-gray);
+  padding-bottom: 0;
+  line-height: 1.6;
+}
+
+
+/* ==============================
+PROJECTS MARQUEE
+================================= */
+.projects-marquee-bar {
+  overflow: hidden;
+  width: 100%;
+}
+
+.projects-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  animation: projectsMarquee 40s linear infinite;
+}
+
+.projects-marquee-track img {
+  height: 329px;
+  width: auto;
+  border-radius: var(--radius-xs);
+  box-shadow: -2px 2px 16px -8px #00000035;
+}
+
+@keyframes projectsMarquee {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0%); }
+}

@@ -182,11 +182,89 @@ counters.forEach(counter => observer.observe(counter));
 
 
 
+// FAQ
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const toggle = item.querySelector('.faq-toggle');
+
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      if (isOpen) {
+        item.classList.remove('open');
+        answer.style.maxHeight = null;
+        toggle.textContent = '+';
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        toggle.textContent = '−';
+      }
+    });
+  });
+});
 
 
+// FAQ - card
+function stickyFaqCard() {
+  const card = document.getElementById('faqCard');
+  const faqList = document.querySelector('.faq-list');
+  const faqRight = document.querySelector('.faq-right');
+
+  if (!card || !faqList || !faqRight) return;
+  if (window.innerWidth < 1024) {
+    card.style.position = 'static';
+    return;
+  }
+
+  const topOffset = 24;
+  const cardHeight = card.offsetHeight;
+  const cardWrapperTop = faqRight.getBoundingClientRect().top + window.scrollY;
+  const desiredTop = window.scrollY + topOffset;
+
+  if (desiredTop < cardWrapperTop) {
+    card.style.position = 'static';
+  } else if (desiredTop + cardHeight > cardWrapperTop + faqRight.offsetHeight) {
+    card.style.position = 'absolute';
+    card.style.top = (faqRight.offsetHeight - cardHeight) + 'px';
+  } else {
+    card.style.position = 'absolute';
+    card.style.top = (desiredTop - cardWrapperTop) + 'px';
+  }
+}
+
+window.addEventListener('scroll', stickyFaqCard);
+window.addEventListener('resize', stickyFaqCard);
+window.addEventListener('load', stickyFaqCard);
 
 
+// rotator w footer
 
+(function () {
+  const words = ['design', 'build'];
+  let index = 0;
+  const el = document.getElementById('rotatorWord');
 
+  if (!el) return;
 
+  setInterval(() => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(-30px)';
+
+    setTimeout(() => {
+      index = (index + 1) % words.length;
+      el.textContent = words[index];
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'none';
+
+      requestAnimationFrame(() => {
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }, 500);
+  }, 2200);
+})();
 

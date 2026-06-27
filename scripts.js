@@ -120,6 +120,7 @@ counters.forEach(counter => observer.observe(counter));
 
 (function () {
   const track = document.getElementById('testimonialsTrack');
+  if (!track) return;  // dodaj tylko tę linię
   const dots = document.querySelectorAll('#testimonialsDots .dot');
   let current = 0;
   let startX = 0;

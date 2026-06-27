@@ -1692,7 +1692,7 @@ LOGA
 }
 
 .logos-track img {
-    height: 48px;
+    height: 32px;
     width: auto;
     /*filter: brightness(0) invert(1);  białe logo na czarnym tle */
     opacity: 0.8;

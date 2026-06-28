@@ -2125,6 +2125,7 @@ ABOUT SECTION
 }
 
 /* ==============================
+/* ==============================
 HERO ANIMATION
 ================================= */
 .container-hero-anim {
@@ -2142,6 +2143,17 @@ HERO ANIMATION
 .ha {
   position: absolute;
   opacity: 0;
+}
+
+/* DESKTOP ONLY - ukryj na mobile */
+@media only screen and (max-width: 767px) {
+  .ha {
+    display: none;
+  }
+  
+  .container-hero-anim {
+    margin: 32px auto;
+  }
 }
 
 /* www — duży mockup strony, centrum */
@@ -2243,11 +2255,10 @@ HERO ANIMATION
 }
 
 .ha-1, .ha-2, .ha-3 {
-  position: static; /* nadpisuje absolute z .ha */
+  position: static;
   width: 20%;
   height: auto;
 }
-
 
 /* ==============================
 PROJECT LINK

@@ -104,7 +104,8 @@ function animateCounter(el) {
     }, step);
 }
 
-const counters = document.querySelectorAll('.counter');
+// Obsługuj zarówno .counter jak i .counter-value
+const counters = document.querySelectorAll('.counter, .counter-value');
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -113,14 +114,22 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.1 });
 
-counters.forEach(counter => observer.observe(counter));
+counters.forEach(counter => {
+    observer.observe(counter);
+    
+    // Jeśli element jest już widoczny, uruchom animację od razu
+    if (counter.getBoundingClientRect().top < window.innerHeight) {
+        animateCounter(counter);
+        observer.unobserve(counter);
+    }
+});
 
 
 (function () {
   const track = document.getElementById('testimonialsTrack');
-  if (!track) return;  // dodaj tylko tę linię
+  if (!track) return;
   const dots = document.querySelectorAll('#testimonialsDots .dot');
   let current = 0;
   let startX = 0;
@@ -268,4 +277,3 @@ window.addEventListener('load', stickyFaqCard);
     }, 500);
   }, 2200);
 })();
-

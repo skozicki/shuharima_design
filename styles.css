@@ -2787,3 +2787,28 @@ DISCOVERY CALL CARD
   border-radius: 50%;
   object-fit: cover;
 }
+
+
+/* ==============================
+HERO VIDEO
+================================= */
+.container-hero-video {
+  max-width: 1080px;
+  margin: 64px auto;
+  padding: 0 16px;
+}
+
+.hero-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-xs);
+  border: solid 1px #d2d2d2
+}
+
+@media only screen and (max-width: 767px) {
+  .container-hero-video {
+    margin: 32px auto;
+  }
+  
+}

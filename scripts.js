@@ -10,55 +10,29 @@ function menuToggle() {
 }
 
 (() => {
-    const getCookie = (name) => {
-        const value = " " + document.cookie;
-        console.log("value", `==${value}==`);
-        const parts = value.split(" " + name + "=");
-        return parts.length < 2 ? undefined : parts.pop().split(";").shift();
-    };
-
-    const setCookie = function (name, value, expiryDays, domain, path, secure) {
-        const exdate = new Date();
-        exdate.setHours(
-            exdate.getHours() +
-            (typeof expiryDays !== "number" ? 365 : expiryDays) * 24
-        );
-        document.cookie =
-            name +
-            "=" +
-            value +
-            ";expires=" +
-            exdate.toUTCString() +
-            ";path=" +
-            (path || "/") +
-            (domain ? ";domain=" + domain : "") +
-            (secure ? ";secure" : "");
-    };
+    const STORAGE_KEY = "cookiesBannerAcceptedAt";
+    const REMEMBER_DAYS = 365;
 
     const $cookiesBanner = document.querySelector(".cookies-eu-banner");
-    const $cookiesBannerButton = $cookiesBanner.querySelector("button");
-    const cookieName = "cookiesBanner";
-    const hasCookie = getCookie(cookieName);
+    if (!$cookiesBanner) return;
 
-    if (!hasCookie) {
+    const $cookiesBannerButton = $cookiesBanner.querySelector("button");
+    if (!$cookiesBannerButton) return;
+
+    const acceptedAt = Number(localStorage.getItem(STORAGE_KEY));
+    const remainingMs = REMEMBER_DAYS * 24 * 60 * 60 * 1000;
+    const hasValidConsent = acceptedAt && (Date.now() - acceptedAt) < remainingMs;
+
+    if (!hasValidConsent) {
         $cookiesBanner.classList.remove("hidden");
     }
 
     $cookiesBannerButton.addEventListener("click", () => {
-        setCookie(cookieName, "closed");
+        localStorage.setItem(STORAGE_KEY, String(Date.now()));
         $cookiesBanner.classList.add("hidden");
     });
 })();
 
-
-
-$("#slider").on("input change", (e)=>{
-    const sliderPos = e.target.value;
-    // Update the width of the foreground image
-    $('.foreground-img').css('width', `${sliderPos}%`)
-    // Update the position of the slider button
-    $('.slider-button').css('left', `calc(${sliderPos}% - 18px)`)
-  });
 
 
 // Tylko przekierowuje - bez aktualizacji przycisków

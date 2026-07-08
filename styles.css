@@ -1620,3 +1620,52 @@ DISCOVERY CALL CARD
   border-radius: 50%;
   object-fit: cover;
 }
+
+/* ==============================
+CASE GALLERY (galeria projektu — stały element na podstronach projektów)
+================================= */
+
+.case-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.case-gallery-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .case-gallery-row {
+    grid-template-columns: 1.7fr 1fr;
+  }
+}
+
+.case-gallery-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.case-gallery-item img,
+.case-gallery-item video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-gallery-feature {
+  position: relative;
+  aspect-ratio: 1080 / 600;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.case-gallery-feature-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

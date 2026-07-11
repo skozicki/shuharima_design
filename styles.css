@@ -281,7 +281,7 @@ strong {
 
 .img-other {
     width: 100%;
-    border-radius: var(--radius-xs, 2rem);
+    border-radius: var(--radius-xs, 1rem);
     /* border: 2px solid var(--accent-color); */
     height: auto;
     margin: 0 auto;
@@ -1644,7 +1644,7 @@ CASE GALLERY (galeria projektu — stały element na podstronach projektów)
 }
 
 .case-gallery-item {
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-xs);
   overflow: hidden;
 }
 
@@ -1659,7 +1659,7 @@ CASE GALLERY (galeria projektu — stały element na podstronach projektów)
 .case-gallery-feature {
   position: relative;
   aspect-ratio: 1080 / 600;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-xs);
   overflow: hidden;
 }
 

@@ -675,6 +675,7 @@ LOGA
     padding: 24px 0;
     overflow: hidden;
     width: 100%;
+    margin-top: 60px;
 }
 
 .logos-track {
@@ -821,24 +822,26 @@ produkt
 }
 
 /* ==============================
-TESTIMONMIALS
+TESTIMONIALS
 ================================= */
-
 .testimonials-section {
   width: 100%;
   overflow: hidden;
   text-align: center;
   border-top: 1px solid #832E88;
-    border-bottom: 1px solid #832E88;
+  border-bottom: 1px solid #832E88;
+  position: relative;
 }
 
 .testimonials-wrapper {
   overflow: hidden;
   cursor: grab;
   user-select: none;
+  position: relative;
 }
 
-.testimonials-wrapper:active { cursor: grabbing;
+.testimonials-wrapper:active { 
+  cursor: grabbing; 
 }
 
 .testimonials-track {
@@ -910,6 +913,54 @@ TESTIMONMIALS
 .dot.active {
   background: #111;
   transform: scale(1.2);
+}
+
+/* ==============================
+TESTIMONIALS NAVIGATION ARROWS
+================================= */
+.testimonials-nav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: var(--pure-white-color);
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+
+@media only screen and (min-width: 768px) {
+  .testimonials-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.testimonials-nav-prev {
+  left: 16px;
+}
+
+.testimonials-nav-next {
+  right: 16px;
+}
+
+.testimonials-nav:hover {
+  background: var(--accent-color);
+  color: var(--pure-white-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(131, 46, 136, 0.2);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.testimonials-nav:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 /* ==============================

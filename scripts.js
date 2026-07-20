@@ -120,6 +120,22 @@ counters.forEach(counter => {
     dot.addEventListener('click', () => goTo(+dot.dataset.index));
   });
 
+  // STRZAŁKI NAWIGACYJNE
+  const prevBtn = document.querySelector('.testimonials-nav-prev');
+  const nextBtn = document.querySelector('.testimonials-nav-next');
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) goTo(current - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (current < dots.length - 1) goTo(current + 1);
+    });
+  }
+
   // Mouse drag
   track.addEventListener('mousedown', e => {
     isDragging = true;

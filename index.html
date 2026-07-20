@@ -72,7 +72,7 @@
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
                 <div class="status-badge">
     <span class="status-dot"></span>
-    <span>Currently accepting 2 new clients</span>
+    <span>New clinets spot left: 2</span>
                 </div>
                 <h1>
                     Kształtuję sposób w jaki Twoja firma   <span class="hero_gradientText"> jest postrzegana przez klientów.</span>
@@ -86,7 +86,7 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 <a href="" class="btn-primary-normal" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sebastian-kozicki1/30min'}); return false;">
-    Zarezerwuj intro call
+    Porozmawiajmy o tym czego potrzebujesz
 </a>
         <!--<a href="work.html" class="btn-secondary-normal">Zobacz co robię</a>-->
 
@@ -97,10 +97,10 @@
 
    
         
-        
+        <!--
               <div class="container" style="display: flex; justify-content: center; width: 100%; margin: 0 auto;">
   <img src="img/supporting/main.png" alt="main" style="max-width: 1080px; width: 100%; height: auto; display: block;">
-</div>
+</div> -->
         
         
         
@@ -250,9 +250,16 @@
 
 <div class="container">
 <div class="testimonials-section">
+  <!-- STRZAŁKA LEWO -->
+  <button class="testimonials-nav testimonials-nav-prev" aria-label="Previous testimonial">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+
   <div class="testimonials-wrapper">
     <div class="testimonials-track" id="testimonialsTrack">
-
+      <!-- Reszta slajdów bez zmian -->
       <div class="testimonial-slide">
         <p class="testimonial-quote">"Współpraca z panem Sebastianem zaowocowała profesjonalną stroną internetową, 
             w pełni zgodną z naszymi oczekiwaniami, dedykowaną naszym klientom z rynku nieruchomości. 
@@ -260,7 +267,6 @@
             i wyglądu strony. Szczególnie doceniamy cierpliwość, uważność oraz dostępność pana Sebastiana. 
             Z pełnym przekonaniem polecamy współpracę."</p>
         <div class="testimonial-author">
-      
           <div>
             <span class="author-name">Katarzyna Łobaczewska</span>
             <span class="author-role">Właściciel | <a href="https://bromirscy.pl/" target="_blank">Bromirscy Odpowiedzialna Sprzedaż Nieruchomości</a></span>
@@ -278,7 +284,6 @@ Każdorazowo wykonywał powierzone mu zadania terminowo. Zasługuje również na
 — żadna wiadomość nie pozostała bez odpowiedzi. Z pełnym przekonaniem polecam współpracę z panem Sebastianem i jestem pewien, 
 że zrealizujemy wspólnie jeszcze wiele projektów."</p>
         <div class="testimonial-author">
-         
           <div>
             <span class="author-name">Łukasz Wójcik</span>
             <span class="author-role">Właściciel | <a href="https://aspn.pl/pl/" target="_blank">aspen.your print broker</a></span>
@@ -291,7 +296,6 @@ Każdorazowo wykonywał powierzone mu zadania terminowo. Zasługuje również na
             Od kilku lat realizujemy wspólnie kilka projektów. Wszystko zawsze jest perfekcyjnie przygotowane, 
             dostarczane na czas i zgodne z moimi oczekiwaniami. Z pełnym przekonaniem polecam współpracę — naprawdę warto!"</p>
         <div class="testimonial-author">
-         
           <div>
             <span class="author-name">Marcin Zacharko</span>
             <span class="author-role">Właściciel | <a href="https://trzcinakrakow.pl/" target="_blank">Trzcina Bar</a></span>
@@ -302,7 +306,6 @@ Każdorazowo wykonywał powierzone mu zadania terminowo. Zasługuje również na
       <div class="testimonial-slide">
         <p class="testimonial-quote">"Sebastian to osoba o wysokiej kulturze osobistej, aktywnie angażuje się w pracę zespołu i bardzo odpowiedzialnie podchodzi do swoich zadań. Jest również chętny do rozwijania swoich umiejętności i szybko się uczy. Każde powierzone mu zadanie wykonywał na najwyższym poziomie, z pełnym zaangażowaniem."</p>
         <div class="testimonial-author">
-         
           <div>
             <span class="author-name">Urszula Obajtek</span>
             <span class="author-role">Właściciel | <a href="https://solara.com.pl/" target="_blank">Unlimited Advertising & Design bySOLARA</a></span>
@@ -316,7 +319,6 @@ Każdorazowo wykonywał powierzone mu zadania terminowo. Zasługuje również na
             przejrzysta i oddająca wszystkie treści, na których mi zależało. Sebastian nie bał się kwestionować moich pomysłów, 
             podając rzeczowe argumenty na to, czemu one mogą nie zadziałać ;) Polecam współpracę z Sebastianem, duża wiedza i zaangażowanie 100%!"</p>
         <div class="testimonial-author">
-          
           <div>
             <span class="author-name">Sonia Cieślik</span>
             <span class="author-role">Właściciel | <a href="https://soniacapelli.pl/" target="_blank">Sonia Capelli - Przeszczepy włosów</a></span>
@@ -327,16 +329,21 @@ Każdorazowo wykonywał powierzone mu zadania terminowo. Zasługuje również na
       <div class="testimonial-slide">
         <p class="testimonial-quote">"To jest miejsce na Twoją opinię"</p>
         <div class="testimonial-author">
-       
           <div>
             <span class="author-name">Kolejny zadowolony klient</span>
             <span class="author-role">Stanowisko | Firma</span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
+
+  <!-- STRZAŁKA PRAWO -->
+  <button class="testimonials-nav testimonials-nav-next" aria-label="Next testimonial">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
 
   <div class="testimonials-dots" id="testimonialsDots">
     <span class="dot active" data-index="0"></span>
@@ -535,12 +542,12 @@ Każdorazowo wykonywał powierzone mu zadania terminowo. Zasługuje również na
   <div class="collab-card-inner">
     <div class="collab-card-left">
       <h3>A może potrzebujesz członka zespołu na konkretny okres czasu?</h3>
-      <p style="color: rgb(217, 217, 217);">Staje się częścią Twojego zespołu. Adaptuję sie w Twoje struktury i pracuję ramię w ramię z Twoimi ludźmi.</p>
-      <a href="" class="btn-secondary-normal" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sebastian-kozicki1/30min'}); return false;">Opowiedz o swoim projekcie</a>
+      <p style="color: rgb(217, 217, 217);">Staję się częścią Twojego zespołu. Adaptuję sie w Twoje struktury i pracuję ramię w ramię z Twoimi ludźmi.</p>
+      <a href="" class="btn-secondary-normal" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/sebastian-kozicki1/30min'}); return false;">Porozmawiajmy o Twoim projekcie</a>
     </div>
     <div class="collab-features collab-features-dark">
       <span>Definiujemy zakres i timeline</span>
-      <span>Każda metodologia</span>
+      <span>Pracuję zgodnie z Twoją metodologią</span>
       <span>Senior UX/UI designer od pierwszego dnia</span>
       <span>Globalne i strategiczne myślenia & orientacja na cele</span>
       <span>Decyzje podejmowane na podstawie danych</span>

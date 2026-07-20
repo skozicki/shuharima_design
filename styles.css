@@ -679,10 +679,14 @@ LOGA
 
 .logos-track {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 64px;
     width: max-content;
     animation: marquee 30s linear infinite;
+}
+
+.logos-track img.logo-featured {
+  height: 50px !important;
 }
 
 .logos-track img {
@@ -1350,7 +1354,7 @@ FAQ SECTION
 
 .faq-headline-light {
   font-weight: 400;
-  color: var(--text-color-gray);
+  color: var(--text-color);
 }
 
 .faq-list {
@@ -1841,4 +1845,20 @@ COOKIES POPUP MODAL
 
 .cookies-popup-btn-accept:hover {
   opacity: 0.8;
+}
+
+/* ==============================
+PROJECT LIST
+================================= */
+.project-list {
+  list-style-type: disc;
+  margin: 0 0 16px 0;  /* zmiana: usuń margin-top, zostaw tylko margin-bottom */
+  padding-left: 24px;
+}
+
+.project-list li {
+  font-size: var(--text-sm);
+  color: var(--text-color-gray);
+  margin-bottom: 8px;
+  font-weight: 400;
 }

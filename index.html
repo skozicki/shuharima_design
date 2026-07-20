@@ -28,13 +28,7 @@
 </head>
 
 <body>
-    <div class="cookies-eu-banner hidden">
-        By clicking "Accept," you agree to my use of cookies on this site for analytical purposes only.
-        You should also
-        know that I use the Google Fonts API - read what it means for you
-        <a href="https://developers.google.com/fonts/faq/privacy" id="cookie-link">HERE</a>
-        <button>Accept</button>
-    </div>
+   
     <header>
         <div class="container-nav">
             <div class="navtoggle" id="myNavtoggle">
@@ -72,7 +66,7 @@
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
                 <div class="status-badge">
     <span class="status-dot"></span>
-    <span>New clinets spot left: 2</span>
+    <span>New clients spot left: 2</span>
                 </div>
                 <h1>
                     Kształtuję sposób w jaki Twoja firma   <span class="hero_gradientText"> jest postrzegana przez klientów.</span>
@@ -846,6 +840,20 @@ Każdorazowo wykonywał powierzone mu zadania terminowo. Zasługuje również na
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
 
+<!-- COOKIES POPUP MODAL -->
+<div class="cookies-popup-backdrop">
+    <div class="cookies-popup-modal">
+        <button class="cookies-popup-close" aria-label="Zamknij">×</button>
+        <p class="cookies-popup-text">
+            Klikając „Akceptuj", wyrażasz zgodę na używanie przeze mnie plików cookie na tej stronie wyłącznie w celach analitycznych. 
+            Warto również wiedzieć, że używam Google Fonts API - <a href="https://developers.google.com/fonts/faq/privacy" target="_blank">przeczytaj co to oznacza</a>
+        </p>
+        <div class="cookies-popup-buttons">
+            <button class="cookies-popup-btn-secondary">Odrzuć</button>
+            <button class="cookies-popup-btn-accept">Akceptuj</button>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

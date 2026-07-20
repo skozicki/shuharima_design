@@ -13,23 +13,46 @@ function menuToggle() {
     const STORAGE_KEY = "cookiesBannerAcceptedAt";
     const REMEMBER_DAYS = 365;
 
-    const $cookiesBanner = document.querySelector(".cookies-eu-banner");
-    if (!$cookiesBanner) return;
+    const $backdrop = document.querySelector(".cookies-popup-backdrop");
+    const $modal = document.querySelector(".cookies-popup-modal");
+    const $closeBtn = document.querySelector(".cookies-popup-close");
+    const $acceptBtn = document.querySelector(".cookies-popup-btn-accept");
+    const $declineBtn = document.querySelector(".cookies-popup-btn-secondary");
 
-    const $cookiesBannerButton = $cookiesBanner.querySelector("button");
-    if (!$cookiesBannerButton) return;
+    if (!$backdrop || !$modal || !$acceptBtn) return;
 
     const acceptedAt = Number(localStorage.getItem(STORAGE_KEY));
     const remainingMs = REMEMBER_DAYS * 24 * 60 * 60 * 1000;
     const hasValidConsent = acceptedAt && (Date.now() - acceptedAt) < remainingMs;
 
-    if (!hasValidConsent) {
-        $cookiesBanner.classList.remove("hidden");
+    function closeCookieModal() {
+        $backdrop.classList.remove("active");
     }
 
-    $cookiesBannerButton.addEventListener("click", () => {
+    function acceptCookies() {
         localStorage.setItem(STORAGE_KEY, String(Date.now()));
-        $cookiesBanner.classList.add("hidden");
+        closeCookieModal();
+    }
+
+    if (!hasValidConsent) {
+        $backdrop.classList.add("active");
+    }
+
+    $acceptBtn.addEventListener("click", acceptCookies);
+    
+    if ($closeBtn) {
+        $closeBtn.addEventListener("click", closeCookieModal);
+    }
+
+    if ($declineBtn) {
+        $declineBtn.addEventListener("click", closeCookieModal);
+    }
+
+    // Zamknij popup po klikięciu na backdrop (poza modalem)
+    $backdrop.addEventListener("click", (e) => {
+        if (e.target === $backdrop) {
+            closeCookieModal();
+        }
     });
 })();
 

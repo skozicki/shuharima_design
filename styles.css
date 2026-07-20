@@ -623,15 +623,14 @@ X-large devices (1440px or larger)
 }
 }
 
-.cookies-eu-banner.hidden {
-    display: none;
-}
 
 .lang-switcher {
     display: flex;
     align-items: center;
     gap: 4px;
 }
+
+
 
 /* ==============================
 LANG SWITCH
@@ -1719,4 +1718,127 @@ CASE GALLERY (galeria projektu — stały element na podstronach projektów)
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ==============================
+COOKIES POPUP MODAL
+================================= */
+.cookies-popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cookies-popup-backdrop.active {
+  display: flex;
+  opacity: 1;
+}
+
+.cookies-popup-modal {
+  background-color: var(--pure-white-color);
+  border-radius: var(--radius-md);
+  padding: 40px 32px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: modalSlideIn 0.3s ease forwards;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.cookies-popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-color-gray);
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.cookies-popup-close:hover {
+  color: var(--text-color);
+}
+
+.cookies-popup-text {
+  font-size: var(--text-sm);
+  color: var(--text-color);
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.cookies-popup-text a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.cookies-popup-text a:hover {
+  color: var(--accent-hover-color);
+}
+
+.cookies-popup-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cookies-popup-btn-secondary {
+  padding: 0.8rem 1.6rem;
+  background: var(--surface-color);
+  border: none;
+  border-radius: var(--radius-round);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: inherit;
+}
+
+.cookies-popup-btn-secondary:hover {
+  background-color: #d0d0d0;
+}
+
+.cookies-popup-btn-accept {
+  padding: 0.8rem 1.6rem;
+  background: var(--accent-color);
+  border: none;
+  border-radius: var(--radius-round);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--pure-white-color);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-family: inherit;
+}
+
+.cookies-popup-btn-accept:hover {
+  opacity: 0.8;
 }
